@@ -1,9 +1,9 @@
 import ts from "typescript";
-import { LuauBlock, LuauLocalDecleration, LuauNode } from "../LuauAST/luauast";
+import * as LuauAST from "../LuauAST/index";
 import { makeLiteral } from "./utils/makeliteral";
 
-export function transformSourceFile(sf: ts.SourceFile): LuauBlock {
-    const body: LuauNode[] = [];
+export function transformSourceFile(sf: ts.SourceFile): LuauAST.LuauBlock {
+    const body: LuauAST.LuauNode[] = [];
     for (const statement of sf.statements) {
         const node = transformNode(statement);
         if (node) body.push(node);
@@ -11,7 +11,7 @@ export function transformSourceFile(sf: ts.SourceFile): LuauBlock {
     return { type: "Block", statements: body };
 }
 
-export function transformNode(node: ts.Node): LuauNode | null {
+export function transformNode(node: ts.Node): LuauAST.LuauNode | null {
     switch (node.kind) {
         case ts.SyntaxKind.VariableStatement:
             return transformVariable(node as ts.VariableStatement);
@@ -20,7 +20,7 @@ export function transformNode(node: ts.Node): LuauNode | null {
     }
 }
 
-function transformVariable(node: ts.VariableStatement): LuauLocalDecleration {
+function transformVariable(node: ts.VariableStatement): LuauAST.LuauLocalDecleration {
     const declarartion = node.declarationList.declarations[0];
     const name = (declarartion.name as ts.Identifier).text;
     const init = declarartion.initializer ? transformNode(declarartion.initializer) : makeLiteral(null);

@@ -1,3 +1,8 @@
+/**
+ * Represents any node in the Luau abstract syntax tree (AST).
+ * This union type covers all possible Luau AST node types, including blocks, classes,
+ * local declarations, function declarations, identifiers, member accesses, call expressions, and literals.
+ */
 export type LuauNode =
     | LuauBlock
     | LuauClass

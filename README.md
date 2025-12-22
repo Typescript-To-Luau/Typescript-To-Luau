@@ -1,4 +1,7 @@
-<div align="center"><img width=25% src="https://github.com/Typescript-To-Luau/Typescript-To-Luau/tree/main/assets/logo.png"></div>
+<div align="center">
+  <img width="25%" src="https://raw.githubusercontent.com/Typescript-To-Luau/Typescript-To-Luau/main/assets/logo.png">
+</div>
+
 
 # Typescript To Luau
 

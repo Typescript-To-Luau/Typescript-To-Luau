@@ -2,14 +2,16 @@
   "name": "typescript-to-luau",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "out/CLI/index.js",
+  "bin": {
+    "ttlsc": "out/CLI/cli.js"
+  },
   "scripts": {
     "test": "jest"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "module",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^24.10.1",
@@ -17,5 +19,12 @@
     "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
-  }
+  },
+  "files": [
+    "out",
+    "include",
+    "CHANGELOG.md",
+    "!**/*.js.map",
+    "!**/*.tsbuildinfo"
+  ]
 }

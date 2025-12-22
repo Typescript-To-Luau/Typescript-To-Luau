@@ -1,5 +1,7 @@
 # Typescript To Luau
 
+<div align="center"><img width=25% src="https://github.com/Typescript-To-Luau/Typescript-To-Luau/tree/main/assets/logo.png"></div>
+
 ![CI](https://github.com/Typescript-To-Luau/Typescript-To-Luau/actions/workflows/ci.yml/badge.svg)
 
 A TypeScript → Luau compiler for Roblox that lets you write TypeScript-like code and emit idiomatic Luau for use in Roblox games and libraries.
